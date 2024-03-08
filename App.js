@@ -1,4 +1,4 @@
-import { View, ScrollView, Text, StyleSheet,Dimensions, ImageBackground,} from "react-native";
+import { View, ScrollView, Text, StyleSheet,Dimensions, ImageBackground, TextInput, TouchableOpacity} from "react-native";
 import { useState } from "react";
 
 const {width: screenWidth, height: screenHeight} = Dimensions.get("window")
@@ -57,7 +57,14 @@ export default function App() {
         >
 
           <View style={styles.viewSearch}>
+            <TextInput
+            style={styles.input}
+            placeholder="Procurando algo?"
+            />
 
+            <TouchableOpacity>
+              <Text>...</Text>
+            </TouchableOpacity>
           </View>
 
         </ImageBackground>
