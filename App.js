@@ -45,13 +45,20 @@ export default function App() {
       },
   ])
 
+  const [background, setBackground] = useState(list[0].img)
+
   return <ScrollView style={styles.container}>
     <View style={{flex:1, height: screenHeight}}>
       <View style={{...StyleSheet.absoluteFill, backgroundColor: "#000"}}>
         <ImageBackground
-        source={{uri:}}
+        source={{uri: background}}
         style={styles.imgBg}
+        blurRadius={8}
         >
+
+          <View style={styles.viewSearch}>
+
+          </View>
 
         </ImageBackground>
       </View>
@@ -63,4 +70,12 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
+  imgBg:{
+    flex: 1,
+    width:null,
+    height: null,
+    opacity: 1,
+    justifyContent: 'flex-start',
+    backgroundColor: "#000"
+  }
 });
