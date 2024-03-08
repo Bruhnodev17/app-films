@@ -1,6 +1,8 @@
 import { View, ScrollView, Text, StyleSheet,Dimensions, ImageBackground, TextInput, TouchableOpacity} from "react-native";
 import { useState } from "react";
 
+import Ionicons from '@expo/vector-icons/Ionicons';
+
 const {width: screenWidth, height: screenHeight} = Dimensions.get("window")
 
 export default function App() {
@@ -62,8 +64,8 @@ export default function App() {
             placeholder="Procurando algo?"
             />
 
-            <TouchableOpacity>
-              <Text>...</Text>
+            <TouchableOpacity style={styles.icon}>
+              <Ionicons name="search" color="#000" size={25}/>
             </TouchableOpacity>
           </View>
 
@@ -84,5 +86,27 @@ const styles = StyleSheet.create({
     opacity: 1,
     justifyContent: 'flex-start',
     backgroundColor: "#000"
+  },
+  viewSearch:{
+    marginTop: 40,
+    backgroundColor: "#FFF",
+    elevation: 10, 
+    borderRadius: 5,
+    marginVertical: 10,
+    width: "95%",
+    height: 50,
+    flexDirection: "row",
+    alignSelf: "center"
+  },
+  input:{
+    width: "95%",
+    padding: 13,
+    paddingLeft: 20,
+    fontSize: 17,
+  },
+  icon:{
+    position: "absolute",
+    right: 20,
+    top: 13,
   }
 });
