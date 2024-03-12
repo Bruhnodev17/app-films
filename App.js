@@ -71,7 +71,7 @@ export default function App() {
             style={styles.carouselImg}
             />
             <Text style={styles.carouselText}>{item.tile}</Text>
-            <Ionicons name="play-circle-outline" size={30} color="#FFF" style={StyleSheet.carouselIcon}/>
+            <Ionicons name="play-circle-outline" size={30} color="#FFF" style={styles.carouselIcon}/>
           </TouchableOpacity>
         </View>
       )
@@ -115,6 +115,9 @@ export default function App() {
                 sliderWidth={screenWidth}
                 itemWidth={200}
                 inactiveSlideOpacity={0.5}
+                onSnapToItem={(index) => {
+                    setBackground(list[index].img)
+                }}
                 />
             </View>
 
