@@ -7,6 +7,7 @@ import {
   ImageBackground,
   TextInput,
   TouchableOpacity,
+  Image,
 } from "react-native";
 import { useState, useRef } from "react";
 
@@ -64,7 +65,14 @@ export default function App() {
   const _renderItem = ({item, index}) => {
       return(
         <View >
-          <Text>{item.title}</Text>
+          <TouchableOpacity>
+            <Image 
+            source={{uri: item.img}}
+            style={styles.carouselImg}
+            />
+            <Text style={styles.carouselText}>{item.tile}</Text>
+            <Ionicons name="play-circle-outline" size={30} color="#FFF" style={StyleSheet.carouselIcon}/>
+          </TouchableOpacity>
         </View>
       )
   }
@@ -156,5 +164,29 @@ const styles = StyleSheet.create({
     height: 350,
     justifyContent: "center",
     alignItems: "center"
+  },
+  carousel:{
+    flex: 1,
+    overflow: "visible",
+  },
+  carouselImg:{
+    alignSelf: "center",
+    width: 200,
+    height: 300,
+    borderRadius: 12,
+    backgroundColor: " rgba(0,0,0,0.5)"
+  },
+  carouselText:{
+    padding: 15,
+    color: "#FFF",
+    position: "absolute",
+    bottom: 10,
+    left: 2,
+    fontWeight: "bold"
+  },
+  carouselIcon:{
+    position: "absolute",
+    top: 15,
+    right: 15,
   }
 });
